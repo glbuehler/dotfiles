@@ -1,4 +1,6 @@
 
+ln -sf ~/dotfiles/bashrc ~/.bashrc
+
 mkdir -p ~/.config/ghostty
 ln -sf ~/dotfiles/ghostty/config ~/.config/ghostty/config
 
