@@ -43,3 +43,4 @@
 # resize-overlay-duration = 4s 200ms
 window-decoration = none
 mouse-hide-while-typing = true
+background = #1a1b26
