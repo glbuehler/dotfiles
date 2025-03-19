@@ -202,7 +202,8 @@ exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'pre
 
 # Configure peripherals
 exec_always --no-startup-id xrandr --output DP-1 --primary --left-of HDMI-0
-exec_always --no-startup-id xinput --set-prop 14 157 0.25 0 0 0 0.25 0 0 0 1
+exec_always --no-startup-id xinput --set-prop 14 157 0.1 0 0 0 0.1 0 0 0 1
+exec_always --no-startup-id amixer set 'Master' 30%
 
 # Startup Applications
 exec --no-startup-id i3-msg 'workspace 1; exec ghostty'
