@@ -1,6 +1,7 @@
 
 ln -sf ~/dotfiles/bashrc ~/.bashrc
 ln -sf ~/dotfiles/profile ~/.profile
+ln -sf ~/dotfiles/gitconfig ~/.gitconfig
 
 mkdir -p ~/.config/ghostty
 ln -sf ~/dotfiles/ghostty/config ~/.config/ghostty/config

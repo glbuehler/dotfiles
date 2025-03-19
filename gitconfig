@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Gideon Bühler
+	email = gideonbuehler18@gmail.com
+[core]
+	editor = nvim
