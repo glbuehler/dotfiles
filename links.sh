@@ -11,3 +11,6 @@ ln -sf ~/dotfiles/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
 mkdir -p ~/.config/i3
 ln -sf ~/dotfiles/i3/config ~/.config/i3/config
+
+mkdir -p ~/.config
+ln -sdf ~/dotfiles/nvim/ ~/.config/nvim
