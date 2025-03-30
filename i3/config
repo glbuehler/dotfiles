@@ -194,8 +194,9 @@ default_floating_border pixel 1
 
 # Configure workspace
 workspace 1 output DP-1
-workspace 9 output HDMI-0
+workspace 2 output DP-1
 workspace 10 output HDMI-0
+assign [class="discord"] workspace 10
 
 # Enable dark mode
 exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
@@ -206,7 +207,6 @@ exec_always --no-startup-id xinput --set-prop 14 157 0.1 0 0 0 0.1 0 0 0 1
 exec_always --no-startup-id amixer set 'Master' 30%
 
 # Startup Applications
-exec --no-startup-id i3-msg 'workspace 1; exec ghostty'
-assign [class="discord"] workspace 9
+exec_always --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec_always --no-startup-id i3-msg 'workspace 1; exec ghostty'
 exec --no-startup-id sh -c "sleep 2 && discord"
-exec --no-startup-id i3-msg 'workspace 10; exec firefox'
