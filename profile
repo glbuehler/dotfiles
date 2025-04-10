@@ -27,3 +27,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export GTK_THEME=Adwaita:dark
+export LC_ALL=$LANG
