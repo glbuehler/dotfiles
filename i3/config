@@ -158,27 +158,27 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym odiaeresis resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym odiaeresis resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -186,7 +186,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command i3status
 }
 
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/scripts/change-brightness.sh -0.1
@@ -199,10 +199,9 @@ default_floating_border pixel 1
 exec_always --no-startup-id feh --bg-scale /home/gideon/Pictures/background.png
 
 # Configure workspace
-workspace 1 output DP-1
-workspace 2 output DP-1
-workspace 10 output HDMI-0
-assign [class="discord"] workspace 10
+workspace 1 output eDP
+workspace 2 output eDP
+# assign [class="discord"] workspace 10
 
 # set lock time
 exec_always --no-startup-id xset dpms 0 0 300 &
@@ -211,10 +210,10 @@ exec --no-startup-id xss-lock -- i3lock --nofork --color=222222 --image=/home/gi
 # enable dark mode
 exec_always --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
-# Configure peripherals
-exec_always --no-startup-id xrandr --output DP-1 --primary --left-of HDMI-0
-exec_always --no-startup-id xinput --set-prop 14 157 0.1 0 0 0 0.1 0 0 0 1
-exec_always --no-startup-id amixer set 'Master' 30%
+# configure peripherals
+exec_always --no-startup-id xinput set-prop 9 325 1
+exec_always --no-startup-id xinput set-prop 9 298 1
+exec_always --no-startup-id xrandr --output eDP --gamma 1.2
 
 # startup Applications
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
