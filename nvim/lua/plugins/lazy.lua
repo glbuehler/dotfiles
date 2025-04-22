@@ -52,8 +52,4 @@ require('lazy').setup({
         cmd = { 'LiveServerStart', 'LiveServerStop' },
         config = true,
     },
-    {
-        'nvim-java/nvim-java',
-        opts = {},
-    },
 })

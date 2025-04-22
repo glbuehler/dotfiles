@@ -8,6 +8,7 @@ return {
             'rust_analyzer',
             'gopls',
             'html',
+            'jdtls',
 
             -- formatters
             'stylua',
