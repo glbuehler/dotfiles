@@ -4,6 +4,7 @@ return {
         ensure_installed = {
             -- lsps
             'lua-language-server',
+            'clangd',
             'rust_analyzer',
             'gopls',
             'html',
