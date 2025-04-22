@@ -119,3 +119,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export PATH=$PATH:/home/gideon/scripts:/home/gideon/.platformio/penv/bin
