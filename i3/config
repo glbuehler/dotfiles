@@ -189,6 +189,9 @@ bar {
         status_command i3status
 }
 
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/scripts/change-brightness.sh -0.1
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/scripts/change-brightness.sh +0.1
+
 default_border pixel 1
 default_floating_border pixel 1
 
