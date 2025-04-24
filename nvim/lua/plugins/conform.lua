@@ -16,9 +16,14 @@ return {
     opts = {
         notify_on_error = false,
         format_on_save = function(bufnr)
+            local lsp_ignore = { 'c', 'cpp', 'typescript' }
+            if vim.tbl_contains(lsp_ignore, vim.bo[bufnr].filetype) then
+                return
+            end
+
             return {
                 timeout_ms = 500,
-                lsp_fallback = true,
+                lsp_format = 'fallback',
             }
         end,
         formatters_by_ft = {
