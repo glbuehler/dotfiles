@@ -199,18 +199,17 @@ workspace 10 output HDMI-0
 assign [class="discord"] workspace 10
 
 # set lock time
-exec --no-startup-id xset dpms 0 0 300 &
+exec_always --no-startup-id xset dpms 0 0 300 &
 exec --no-startup-id xss-lock -- i3lock --nofork --color=222222 --image=/home/gideon/Pictures/gru_transparent.png &
 
 # enable dark mode
-exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+exec_always --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Configure peripherals
 exec_always --no-startup-id xrandr --output DP-1 --primary --left-of HDMI-0
 exec_always --no-startup-id xinput --set-prop 14 157 0.1 0 0 0 0.1 0 0 0 1
 exec_always --no-startup-id amixer set 'Master' 30%
 
-# Startup Applications
-exec_always --no-startup-id i3-msg 'workspace 2; exec firefox'
-exec_always --no-startup-id i3-msg 'workspace 1; exec ghostty'
-exec --no-startup-id sh -c "sleep 2 && discord"
+# startup Applications
+exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec ghostty'
