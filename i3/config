@@ -192,6 +192,9 @@ bar {
 default_border pixel 1
 default_floating_border pixel 1
 
+# Set background
+exec_always --no-startup-id feh --bg-scale /home/gideon/Pictures/background.png
+
 # Configure workspace
 workspace 1 output DP-1
 workspace 2 output DP-1
