@@ -28,7 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color=222222 --image=/home/gideon/Pictures/gru_transparent.png
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -198,7 +198,11 @@ workspace 2 output DP-1
 workspace 10 output HDMI-0
 assign [class="discord"] workspace 10
 
-# Enable dark mode
+# set lock time
+exec --no-startup-id xset dpms 0 0 300 &
+exec --no-startup-id xss-lock -- i3lock --nofork --color=222222 --image=/home/gideon/Pictures/gru_transparent.png &
+
+# enable dark mode
 exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Configure peripherals

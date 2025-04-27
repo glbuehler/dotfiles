@@ -16,7 +16,7 @@ return {
     opts = {
         notify_on_error = false,
         format_on_save = function(bufnr)
-            local lsp_ignore = { 'c', 'cpp', 'typescript' }
+            local lsp_ignore = { 'c', 'cpp', 'typescript', 'java' }
             if vim.tbl_contains(lsp_ignore, vim.bo[bufnr].filetype) then
                 return
             end
