@@ -9,6 +9,7 @@ return {
             'gopls',
             'html',
             'jdtls',
+            'ts_ls',
 
             -- formatters
             'stylua',
