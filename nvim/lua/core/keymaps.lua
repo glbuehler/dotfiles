@@ -4,6 +4,8 @@ end)
 
 vim.keymap.set('n', ',', 'o<Esc>', { noremap = true })
 vim.keymap.set('n', ';', 'O<Esc>', { noremap = true })
+vim.keymap.set('n', 'd_', 'v_d', { noremap = true })
+vim.keymap.set('n', 'c_', 'v_c', { noremap = true })
 
 vim.keymap.set('n', '<C-j>', ':move +1<CR>')
 vim.keymap.set('n', '<C-k>', ':move -2<CR>')
