@@ -60,8 +60,21 @@ parse_git_branch() {
     git branch --show-current 2> /dev/null
 }
 
+ps1() {
+    COL=$(($RANDOM%7+1))
+    PS='\[\033[01;30;4'
+    PS="${PS}${COL}"
+    PS=${PS}'m\] \w\[\033[01;39;4'
+    PS="${PS}${COL}"
+    PS=${PS}'m\] \[\033[01;3'
+    PS="${PS}${COL}"
+    PS=${PS}';49m\]\[\033[00m\] \$ '
+    echo "${PS}"
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;30;42m\] \w\[\033[01;39;42m\] \[\033[01;32;49m\]\[\033[00m\]$([ "$(parse_git_branch)" ] && echo " \[\033[01;32m\] $(parse_git_branch)")\[\033[00m\] \$ '
+    # PS1='COL=$(($RANDOM%10)) echo "\[\033[01;30;4$COLm\] \w\[\033[01;39;4$COLm\] \[\033[01;3$COL;49m\]\[\033[00m\]$([ $(parse_git_branch) ] && echo ' \[\033[01;3$COLm\] $(parse_git_branch)')\[\033[00m\] \$ "'
+    PS1=$(ps1)
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
